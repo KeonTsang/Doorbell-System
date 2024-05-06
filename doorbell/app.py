@@ -16,4 +16,5 @@ def index():
     return render_template('index.html', video_files=video_files)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(ssl_context=("cert.pem", "key.pem"))
+
