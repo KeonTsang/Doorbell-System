@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Video Gallery</title>
+</head>
+<body>
+    <h1>My Video Gallery</h1>
+    <ul>
+        {% for video in video_files %}
+        <li>
+            <h2>{{ video }}</h2>
+            <video controls>
+                <source src="{{ url_for('serve_video', filename=video) }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
